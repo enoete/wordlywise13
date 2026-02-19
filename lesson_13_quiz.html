@@ -1,0 +1,1467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐊 Lesson 13 Vocabulary Test - Beware the Silent Crocodile! 🌊</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 50%, #11998e 100%);
+            min-height: 100vh;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            border: 4px solid #11998e;
+        }
+
+        .header h1 {
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            background: linear-gradient(45deg, #11998e, #38ef7d, #11998e, #11998e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: rainbow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes rainbow {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+
+        .header p {
+            font-size: 1.4em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .progress-container {
+            background: #e0e0e0;
+            height: 30px;
+            border-radius: 15px;
+            overflow: hidden;
+            margin: 20px 0;
+            border: 3px solid #11998e;
+        }
+
+        .progress-bar {
+            background: linear-gradient(45deg, #11998e, #38ef7d, #667eea);
+            height: 100%;
+            width: 0%;
+            transition: width 0.5s ease;
+            border-radius: 15px;
+            animation: pulse 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.8; }
+            100% { opacity: 1; }
+        }
+
+        .navigation {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 25px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            border: 3px solid #11998e;
+        }
+
+        .nav-btn {
+            background: linear-gradient(45deg, #11998e, #38ef7d);
+            color: white;
+            border: none;
+            padding: 18px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-btn.active {
+            background: linear-gradient(45deg, #38ef7d, #667eea);
+            transform: translateY(-2px);
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            border: 3px solid #11998e;
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        .section h2 {
+            color: #11998e;
+            font-size: 2.5em;
+            margin-bottom: 25px;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .word-list {
+            background: linear-gradient(135deg, #e6f7ff 0%, #bae7ff 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            border: 3px solid #1890ff;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .word-item {
+            margin: 15px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            border-left: 5px solid #11998e;
+        }
+
+        .word-item strong {
+            color: #11998e;
+            font-size: 1.2em;
+        }
+
+        .question-container {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 25px 0;
+            border: 2px solid #dee2e6;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .question-number {
+            background: linear-gradient(45deg, #11998e, #38ef7d);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .matching-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .matching-column {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #dee2e6;
+        }
+
+        .matching-item {
+            background: #e9ecef;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .matching-item:hover {
+            background: #dee2e6;
+            transform: translateX(5px);
+        }
+
+        .matching-item.selected {
+            background: #cfe2ff;
+            border-color: #11998e;
+        }
+
+        .matching-item.correct {
+            background: #d4edda;
+            border-color: #28a745;
+        }
+
+        .matching-item.incorrect {
+            background: #f8d7da;
+            border-color: #dc3545;
+        }
+
+        .choice-option {
+            background: #e9ecef;
+            padding: 15px 20px;
+            margin: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            display: inline-block;
+        }
+
+        .choice-option:hover {
+            background: #dee2e6;
+            transform: translateY(-2px);
+        }
+
+        .choice-option.selected {
+            background: #cfe2ff;
+            border-color: #11998e;
+        }
+
+        .choice-option.correct {
+            background: #d4edda;
+            border-color: #28a745;
+        }
+
+        .choice-option.incorrect {
+            background: #f8d7da;
+            border-color: #dc3545;
+        }
+
+        .sentence-completion {
+            background: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            border: 2px solid #dee2e6;
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+
+        .blank-space {
+            display: inline-block;
+            min-width: 150px;
+            border-bottom: 2px solid #11998e;
+            margin: 0 5px;
+            text-align: center;
+            font-weight: bold;
+            color: #11998e;
+        }
+
+        .word-bank {
+            background: linear-gradient(135deg, #fff5e6 0%, #ffe0b2 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 3px solid #ff9800;
+        }
+
+        .word-bank-item {
+            background: white;
+            padding: 10px 20px;
+            margin: 8px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: inline-block;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .word-bank-item:hover {
+            background: #f0f0f0;
+            transform: scale(1.05);
+        }
+
+        .word-bank-item.used {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        .check-btn {
+            background: linear-gradient(45deg, #28a745, #20c997);
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 20px auto;
+            display: block;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .check-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .results-container {
+            background: linear-gradient(135deg, #fff5e6 0%, #ffe0b2 100%);
+            padding: 40px;
+            border-radius: 20px;
+            margin: 30px 0;
+            border: 4px solid #ff9800;
+            text-align: center;
+            display: none;
+        }
+
+        .results-container h2 {
+            color: #ff9800;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .score-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .score-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 2px solid #11998e;
+        }
+
+        .score-card h3 {
+            color: #11998e;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .score-card p {
+            font-size: 2em;
+            font-weight: bold;
+            color: #333;
+        }
+
+        @media (max-width: 768px) {
+            .matching-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2.5em;
+            }
+        }
+
+        .fun-fact-box {
+            background: linear-gradient(135deg, #e6f7ff 0%, #bae7ff 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            border: 3px solid #1890ff;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .fun-fact-box h3 {
+            color: #1890ff;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .drag-drop-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .drop-zone {
+            min-height: 50px;
+            background: #f8f9fa;
+            border: 2px dashed #11998e;
+            border-radius: 10px;
+            padding: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .drop-zone.filled {
+            background: #e7f3ff;
+            border-style: solid;
+        }
+
+        .prefix-exercise {
+            background: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            border-left: 5px solid #11998e;
+        }
+
+        .scenario-card {
+            background: white;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 15px;
+            border: 2px solid #dee2e6;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .scenario-card h4 {
+            color: #11998e;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>🐊 Lesson 13 Vocabulary Test</h1>
+            <p>🌊 Beware the Silent Crocodile! 🐊</p>
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+            <p id="progressText">Progress: 0% Complete</p>
+        </div>
+
+        <!-- Navigation -->
+        <div class="navigation">
+            <button class="nav-btn active" onclick="showSection('intro')">📖 Word List</button>
+            <button class="nav-btn" onclick="showSection('sectionA')">13A - Finding Meanings</button>
+            <button class="nav-btn" onclick="showSection('sectionB')">13B - Just the Right Word</button>
+            <button class="nav-btn" onclick="showSection('sectionC')">13C - Applying Meanings</button>
+            <button class="nav-btn" onclick="showSection('sectionD')">13D - Word Study</button>
+            <button class="nav-btn" onclick="showSection('sectionE')">13E - Frida Kahlo Passage</button>
+            <button class="nav-btn" onclick="showResults()">📊 Results</button>
+        </div>
+
+        <!-- Introduction Section -->
+        <!-- Introduction Section -->
+        <div id="intro" class="section active">
+            <h2>📖 Lesson 13 Word List</h2>
+            <div class="word-list">
+                <div class="word-item">
+                    <strong>accommodate</strong> - <em>v.</em> 1. To have or to find room for. 2. To do a favor for.
+                </div>
+                <div class="word-item">
+                    <strong>aggressive</strong> - <em>adj.</em> 1. Ready to attack or start fights; acting in a hostile way. 2. Bold and active.
+                </div>
+                <div class="word-item">
+                    <strong>bask</strong> - <em>v.</em> 1. To relax where it is pleasantly warm. 2. To enjoy a warm or pleasant feeling.
+                </div>
+                <div class="word-item">
+                    <strong>carcass</strong> - <em>n.</em> The dead body of an animal.
+                </div>
+                <div class="word-item">
+                    <strong>conceal</strong> - <em>v.</em> To keep something or someone from being seen or known; to hide.
+                </div>
+                <div class="word-item">
+                    <strong>flail</strong> - <em>v.</em> To strike out or swing wildly; to thrash about.
+                </div>
+                <div class="word-item">
+                    <strong>gorge</strong> - <em>n.</em> A narrow passage between steep cliffs.
+                    <br><em>v.</em> To stuff with food; to eat greedily.
+                </div>
+                <div class="word-item">
+                    <strong>morsel</strong> - <em>n.</em> A small amount, especially of something good to eat; a tidbit.
+                </div>
+                <div class="word-item">
+                    <strong>protrude</strong> - <em>v.</em> To stick out; to project.
+                </div>
+                <div class="word-item">
+                    <strong>ripple</strong> - <em>v.</em> To form small waves.
+                    <br><em>n.</em> A movement like a small wave.
+                </div>
+                <div class="word-item">
+                    <strong>slither</strong> - <em>v.</em> To move with a sliding, side-to-side motion of the body.
+                </div>
+                <div class="word-item">
+                    <strong>sluggish</strong> - <em>adj.</em> 1. Lacking energy; not active. 2. Slow moving.
+                </div>
+                <div class="word-item">
+                    <strong>snout</strong> - <em>n.</em> The nose or jaws that stick out in front of certain animals' heads.
+                </div>
+                <div class="word-item">
+                    <strong>taper</strong> - <em>v.</em> 1. To make or become less wide or less thick at one end. 2. To lessen gradually.
+                    <br><em>n.</em> A thin candle.
+                </div>
+                <div class="word-item">
+                    <strong>visible</strong> - <em>adj.</em> Able to be seen; exposed to view; not hidden.
+                    <br><strong>visibility</strong> - <em>n.</em> 1. The condition of being easily seen. 2. The distance within which things can be seen.
+                </div>
+            </div>
+            
+            <div class="fun-fact-box">
+                <h3>🐊 Fun Facts about Crocodiles!</h3>
+                <p><strong>Did you know?</strong> Crocodiles are <strong>aggressive</strong> predators that lie <strong>concealed</strong> in water with only their eyes and nostrils <strong>visible</strong>! Their long <strong>snout</strong> has teeth that <strong>protrude</strong> even when their mouth is closed. A crocodile's tail <strong>tapers</strong> to a point, and they <strong>slither</strong> through grass or <strong>bask</strong> in the sun. When hunting, they make barely a <strong>ripple</strong> as they swim toward prey. After catching an animal, they <strong>gorge</strong> on the <strong>carcass</strong>, eating every <strong>morsel</strong>. These amazing reptiles can be found in tropical swamps and narrow river <strong>gorges</strong>, where their cold-blooded bodies become <strong>sluggish</strong> in cool temperatures. The bus can <strong>accommodate</strong> thirty adults on this trip to see them!</p>
+            </div>
+        </div>
+
+        <!-- Section 13A - Finding Meanings -->
+        <div id="sectionA" class="section">
+            <h2>13A - Finding Meanings</h2>
+            <p style="text-align: center; font-size: 1.2em; margin-bottom: 30px;">
+                Match the correct pairs to form complete sentences!
+            </p>
+
+            <div class="question-container">
+                <div class="question-number">1</div>
+                <p><strong>Choose two phrases to complete the sentence:</strong></p>
+                <div class="choice-option" onclick="selectChoice(this, 'q1')" data-value="a" data-correct="d">(a) To bask is to / relax where it is pleasantly warm</div>
+                <div class="choice-option" onclick="selectChoice(this, 'q1')" data-value="b" data-correct="d">(b) To bask is to / move by sliding from side to side</div>
+                <div class="choice-option" onclick="selectChoice(this, 'q1')" data-value="c" data-correct="d">(c) To slither is to / relax where it is pleasantly warm</div>
+                <div class="choice-option" onclick="selectChoice(this, 'q1')" data-value="d" data-correct="d">(d) To slither is to / move by sliding from side to side</div>
+            </div>
+
+            <div class="question-container">
+                <div class="question-number">2</div>
+                <p><strong>Choose two phrases to complete the sentence:</strong></p>
+                <div class="choice-option" onclick="selectChoice(this, 'q2')" data-value="a" data-correct="d">(a) An aggressive animal / is one that is a carnivore</div>
+                <div class="choice-option" onclick="selectChoice(this, 'q2')" data-value="b" data-correct="d">(b) A sluggish animal / is one that is a carnivore</div>
+                <div class="choice-option" onclick="selectChoice(this, 'q2')" data-value="c" data-correct="d">(c) An aggressive animal / is one that is ready to fight</div>
+                <div class="choice-option" onclick="selectChoice(this, 'q2')" data-value="d" data-correct="d">(d) An aggressive animal / is one that is ready to fight</div>
+            </div>
+
+            <div class="question-container">
+                <div class="question-number">3</div>
+                <p><strong>Choose two phrases to complete the sentence:</strong></p>
+                <div class="choice-option" onclick="selectChoice(this, 'q3')" data-value="a" data-correct="c">(a) To flail is to / stuff oneself with food</div>
+                <div class="choice-option" onclick="selectChoice(this, 'q3')" data-value="b" data-correct="c">(b) To flail is to / strike out wildly</div>
+                <div class="choice-option" onclick="selectChoice(this, 'q3')" data-value="c" data-correct="c">(c) To gorge is to / stuff oneself with food</div>
+                <div class="choice-option" onclick="selectChoice(this, 'q3')" data-value="d" data-correct="c">(d) To taper is to / stuff oneself with food</div>
+            </div>
+
+            <div class="question-container">
+                <div class="question-number">4</div>
+                <p><strong>Choose two phrases to complete the sentence:</strong></p>
+                <div class="choice-option" onclick="selectChoice(this, 'q4')" data-value="a" data-correct="d">(a) A morsel is / a small wave</div>
+                <div class="choice-option" onclick="selectChoice(this, 'q4')" data-value="b" data-correct="d">(b) A morsel is / a tasty bit of food</div>
+                <div class="choice-option" onclick="selectChoice(this, 'q4')" data-value="c" data-correct="d">(c) A carcass is / a small wave</div>
+                <div class="choice-option" onclick="selectChoice(this, 'q4')" data-value="d" data-correct="d">(d) A ripple is / a small wave</div>
+            </div>
+
+            <div class="question-container">
+                <div class="question-number">5</div>
+                <p><strong>Choose two phrases to complete the sentence:</strong></p>
+                <div class="choice-option" onclick="selectChoice(this, 'q5')" data-value="a" data-correct="d">(a) To flail is to / hold out one's arms</div>
+                <div class="choice-option" onclick="selectChoice(this, 'q5')" data-value="b" data-correct="d">(b) To bask is to / hold out one's arms</div>
+                <div class="choice-option" onclick="selectChoice(this, 'q5')" data-value="c" data-correct="d">(c) To flail is to / enjoy a pleasant feeling</div>
+                <div class="choice-option" onclick="selectChoice(this, 'q5')" data-value="d" data-correct="d">(d) To bask is to / enjoy a pleasant feeling</div>
+            </div>
+
+            <div class="question-container">
+                <div class="question-number">6</div>
+                <p><strong>Choose two phrases to complete the sentence:</strong></p>
+                <div class="choice-option" onclick="selectChoice(this, 'q6')" data-value="a" data-correct="b">(a) To be visible / is to be within sight</div>
+                <div class="choice-option" onclick="selectChoice(this, 'q6')" data-value="b" data-correct="b">(b) To be visible / is to be within sight</div>
+                <div class="choice-option" onclick="selectChoice(this, 'q6')" data-value="c" data-correct="b">(c) To be concealed / is to be lacking energy</div>
+                <div class="choice-option" onclick="selectChoice(this, 'q6')" data-value="d" data-correct="b">(d) To be concealed / is to be within sight</div>
+            </div>
+
+            <div class="question-container">
+                <div class="question-number">7</div>
+                <p><strong>Choose two phrases to complete the sentence:</strong></p>
+                <div class="choice-option" onclick="selectChoice(this, 'q7')" data-value="a" data-correct="b">(a) To conceal is to / keep out of sight</div>
+                <div class="choice-option" onclick="selectChoice(this, 'q7')" data-value="b" data-correct="b">(b) To protrude is to / keep out of sight</div>
+                <div class="choice-option" onclick="selectChoice(this, 'q7')" data-value="c" data-correct="b">(c) To conceal is to / strike out wildly</div>
+                <div class="choice-option" onclick="selectChoice(this, 'q7')" data-value="d" data-correct="b">(d) To flail is to / strike out wildly</div>
+            </div>
+
+            <div class="question-container">
+                <div class="question-number">8</div>
+                <p><strong>Choose two phrases to complete the sentence:</strong></p>
+                <div class="choice-option" onclick="selectChoice(this, 'q8')" data-value="a" data-correct="b">(a) A slither is / an animal's slow movement</div>
+                <div class="choice-option" onclick="selectChoice(this, 'q8')" data-value="b" data-correct="b">(b) A snout is / an animal's projecting nose</div>
+                <div class="choice-option" onclick="selectChoice(this, 'q8')" data-value="c" data-correct="b">(c) A morsel is / an animal's slow movement</div>
+                <div class="choice-option" onclick="selectChoice(this, 'q8')" data-value="d" data-correct="b">(d) A snout is / an animal's slow movement</div>
+            </div>
+
+            <div class="question-container">
+                <div class="question-number">9</div>
+                <p><strong>Choose two phrases to complete the sentence:</strong></p>
+                <div class="choice-option" onclick="selectChoice(this, 'q9')" data-value="a" data-correct="b">(a) To accommodate someone / is to speak favorably of that person</div>
+                <div class="choice-option" onclick="selectChoice(this, 'q9')" data-value="b" data-correct="b">(b) To conceal someone / is to hide that person</div>
+                <div class="choice-option" onclick="selectChoice(this, 'q9')" data-value="c" data-correct="b">(c) To accommodate someone / is to hide that person</div>
+                <div class="choice-option" onclick="selectChoice(this, 'q9')" data-value="d" data-correct="b">(d) To accommodate someone / is to hide that person</div>
+            </div>
+
+            <div class="question-container">
+                <div class="question-number">10</div>
+                <p><strong>Choose two phrases to complete the sentence:</strong></p>
+                <div class="choice-option" onclick="selectChoice(this, 'q10')" data-value="a" data-correct="c">(a) A carcass is / the body of a dead animal</div>
+                <div class="choice-option" onclick="selectChoice(this, 'q10')" data-value="b" data-correct="c">(b) A gorge is / a narrow passage</div>
+                <div class="choice-option" onclick="selectChoice(this, 'q10')" data-value="c" data-correct="c">(c) A carcass is / the body of a dead animal</div>
+                <div class="choice-option" onclick="selectChoice(this, 'q10')" data-value="d" data-correct="c">(d) A morsel is / the body of a dead animal</div>
+            </div>
+
+            <button class="check-btn" onclick="checkSectionA()">✓ Check Section 13A</button>
+        </div>
+
+        <!-- Section 13B - Just the Right Word -->
+        <div id="sectionB" class="section">
+            <h2>13B - Just the Right Word</h2>
+            <p style="text-align: center; font-size: 1.2em; margin-bottom: 30px;">
+                Select the best word to complete each sentence!
+            </p>
+
+            <div class="question-container">
+                <div class="question-number">1</div>
+                <p>The company received an avalanche of mail the first day, but the orders soon <strong>_______________</strong>.</p>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qb1', 'tapered')" data-value="tapered">tapered</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qb1', 'tapered')" data-value="rippled">rippled</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qb1', 'tapered')" data-value="protruded">protruded</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qb1', 'tapered')" data-value="gorged">gorged</div>
+            </div>
+
+            <div class="question-container">
+                <div class="question-number">2</div>
+                <p>A leaf dropped onto the pond and <strong>_______________</strong> the surface.</p>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qb2', 'rippled')" data-value="tapered">tapered</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qb2', 'rippled')" data-value="rippled">rippled</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qb2', 'rippled')" data-value="accommodated">accommodated</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qb2', 'rippled')" data-value="concealed">concealed</div>
+            </div>
+
+            <div class="question-container">
+                <div class="question-number">3</div>
+                <p>The <strong>_______________</strong> is two hundred feet deep.</p>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qb3', 'gorge')" data-value="snout">snout</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qb3', 'gorge')" data-value="gorge">gorge</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qb3', 'gorge')" data-value="carcass">carcass</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qb3', 'gorge')" data-value="morsel">morsel</div>
+            </div>
+
+            <div class="question-container">
+                <div class="question-number">4</div>
+                <p>Will you be able to <strong>_______________</strong> all five of us in your car?</p>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qb4', 'accommodate')" data-value="accommodate">accommodate</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qb4', 'accommodate')" data-value="bask">bask</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qb4', 'accommodate')" data-value="conceal">conceal</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qb4', 'accommodate')" data-value="gorge">gorge</div>
+            </div>
+
+            <div class="question-container">
+                <div class="question-number">5</div>
+                <p>When a small piece of something good to eat fell to the floor, we let our dog eat it.</p>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qb5', 'morsel')" data-value="morsel">morsel</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qb5', 'morsel')" data-value="carcass">carcass</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qb5', 'morsel')" data-value="ripple">ripple</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qb5', 'morsel')" data-value="taper">taper</div>
+            </div>
+
+            <div class="question-container">
+                <div class="question-number">6</div>
+                <p>Customers who cannot pay their bills are pursued by the company in a very <strong>_______________</strong> manner.</p>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qb6', 'aggressive')" data-value="sluggish">sluggish</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qb6', 'aggressive')" data-value="aggressive">aggressive</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qb6', 'aggressive')" data-value="visible">visible</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qb6', 'aggressive')" data-value="concealed">concealed</div>
+            </div>
+
+            <div class="question-container">
+                <div class="question-number">7</div>
+                <p>The Inuit hunters cut up the <strong>_______________</strong> and shared it among themselves.</p>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qb7', 'carcass')" data-value="morsel">morsel</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qb7', 'carcass')" data-value="snout">snout</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qb7', 'carcass')" data-value="carcass">carcass</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qb7', 'carcass')" data-value="gorge">gorge</div>
+            </div>
+
+            <div class="question-container">
+                <div class="question-number">8</div>
+                <p>The twins <strong>_______________</strong> their arms and legs as their parents tried to dress them in snowsuits.</p>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qb8', 'flailed')" data-value="basked">basked</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qb8', 'flailed')" data-value="slithered">slithered</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qb8', 'flailed')" data-value="flailed">flailed</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qb8', 'flailed')" data-value="gorged">gorged</div>
+            </div>
+
+            <div class="question-container">
+                <div class="question-number">9</div>
+                <p>The tractor engine is very <strong>_______________</strong> on these cold mornings.</p>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qb9', 'sluggish')" data-value="aggressive">aggressive</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qb9', 'sluggish')" data-value="visible">visible</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qb9', 'sluggish')" data-value="sluggish">sluggish</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qb9', 'sluggish')" data-value="concealed">concealed</div>
+            </div>
+
+            <div class="question-container">
+                <div class="question-number">10</div>
+                <p>Watch out! There are several rusty nails <strong>_______________</strong> from that board lying on the ground in front of you.</p>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qb10', 'protruding')" data-value="basking">basking</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qb10', 'protruding')" data-value="protruding">protruding</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qb10', 'protruding')" data-value="tapering">tapering</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qb10', 'protruding')" data-value="slithering">slithering</div>
+            </div>
+
+            <button class="check-btn" onclick="checkSectionB()">✓ Check Section 13B</button>
+        </div>
+
+        <!-- Section 13C - Applying Meanings -->
+        <div id="sectionC" class="section">
+            <h2>13C - Applying Meanings</h2>
+            <p style="text-align: center; font-size: 1.2em; margin-bottom: 30px;">
+                <strong>⚠️ IMPORTANT:</strong> Some questions have MORE THAN ONE correct answer!<br>
+                Click to select all answers that apply. Click again to deselect.
+            </p>
+
+            <div class="question-container">
+                <div class="question-number">1</div>
+                <p><strong>Which of the following would decrease visibility?</strong> <span style="color: #11998e; font-weight: bold;">[Select 2]</span></p>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qc1')" data-correct-multi="a,c" data-value="a">(a) fog</div>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qc1')" data-correct-multi="a,c" data-value="b">(b) a telescope</div>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qc1')" data-correct-multi="a,c" data-value="c">(c) a blizzard</div>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qc1')" data-correct-multi="a,c" data-value="d">(d) darkness</div>
+            </div>
+
+            <div class="question-container">
+                <div class="question-number">2</div>
+                <p><strong>Which of the following is an aggressive remark?</strong> <span style="color: #11998e; font-weight: bold;">[Select 1]</span></p>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qc2')" data-correct-multi="a" data-value="a">(a) "Get out of my way!"</div>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qc2')" data-correct-multi="a" data-value="b">(b) "I'm sorry."</div>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qc2')" data-correct-multi="a" data-value="c">(c) "Forget it!"</div>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qc2')" data-correct-multi="a" data-value="d">(d) "Would you please repeat that?"</div>
+            </div>
+
+            <div class="question-container">
+                <div class="question-number">3</div>
+                <p><strong>Which of the following might make a person sluggish?</strong> <span style="color: #11998e; font-weight: bold;">[Select 2]</span></p>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qc3')" data-correct-multi="a,c" data-value="a">(a) a heavy meal</div>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qc3')" data-correct-multi="a,c" data-value="b">(b) bracing air</div>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qc3')" data-correct-multi="a,c" data-value="c">(c) lying in the sun</div>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qc3')" data-correct-multi="a,c" data-value="d">(d) a stimulant</div>
+            </div>
+
+            <div class="question-container">
+                <div class="question-number">4</div>
+                <p><strong>Which of the following animals slither?</strong> <span style="color: #11998e; font-weight: bold;">[Select 2]</span></p>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qc4')" data-correct-multi="a,b" data-value="a">(a) snakes</div>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qc4')" data-correct-multi="a,b" data-value="b">(b) lizards</div>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qc4')" data-correct-multi="a,b" data-value="c">(c) frogs</div>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qc4')" data-correct-multi="a,b" data-value="d">(d) kangaroos</div>
+            </div>
+
+            <div class="question-container">
+                <div class="question-number">5</div>
+                <p><strong>Which of the following can taper?</strong> <span style="color: #11998e; font-weight: bold;">[Select 2]</span></p>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qc5')" data-correct-multi="b,c" data-value="a">(a) a twelve-inch ruler</div>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qc5')" data-correct-multi="b,c" data-value="b">(b) the blade of a dinner knife</div>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qc5')" data-correct-multi="b,c" data-value="c">(c) a candle</div>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qc5')" data-correct-multi="b,c" data-value="d">(d) the toe of a shoe</div>
+            </div>
+
+            <div class="question-container">
+                <div class="question-number">6</div>
+                <p><strong>Which of the following protrudes from the head?</strong> <span style="color: #11998e; font-weight: bold;">[Select 1]</span></p>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qc6')" data-correct-multi="b" data-value="a">(a) the neck</div>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qc6')" data-correct-multi="b" data-value="b">(b) the nose</div>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qc6')" data-correct-multi="b" data-value="c">(c) the ears</div>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qc6')" data-correct-multi="b" data-value="d">(d) the brain</div>
+            </div>
+
+            <div class="question-container">
+                <div class="question-number">7</div>
+                <p><strong>In which of the following places might one bask?</strong> <span style="color: #11998e; font-weight: bold;">[Select 3]</span></p>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qc7')" data-correct-multi="a,c,d" data-value="a">(a) on the beach</div>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qc7')" data-correct-multi="a,c,d" data-value="b">(b) beside the pool</div>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qc7')" data-correct-multi="a,c,d" data-value="c">(c) near a campfire</div>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qc7')" data-correct-multi="a,c,d" data-value="d">(d) on a tropical island</div>
+            </div>
+
+            <div class="question-container">
+                <div class="question-number">8</div>
+                <p><strong>Which of the following might accommodate your neighbors?</strong> <span style="color: #11998e; font-weight: bold;">[Select 1]</span></p>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qc8')" data-correct-multi="b" data-value="a">(a) lending them your tools</div>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qc8')" data-correct-multi="b" data-value="b">(b) inviting them to celebrate</div>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qc8')" data-correct-multi="b" data-value="c">(c) denouncing them to your friends</div>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qc8')" data-correct-multi="b" data-value="d">(d) watching their house while they're away</div>
+            </div>
+
+            <button class="check-btn" onclick="checkSectionC()">✓ Check Section 13C</button>
+        </div>
+        <!-- Section 13D - Word Study -->
+        <div id="sectionD" class="section">
+            <h2>13D - Word Study: Synonyms</h2>
+            
+            <div class="fun-fact-box">
+                <h3>🔤 Understanding Synonyms</h3>
+                <p>Each group of words contains two, three, or four synonyms. Circle any words that are NOT synonyms. (You may have to circle two, one, or no words.)</p>
+            </div>
+
+            <p style="text-align: center; font-size: 1.2em; margin-bottom: 30px;">
+                Select the words that are NOT synonyms!
+            </p>
+
+            <div class="question-container">
+                <div class="question-number">1</div>
+                <p><strong>aggressive / visible / hostile / friendly</strong></p>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qd1')" data-correct-multi="b,d" data-value="a">aggressive</div>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qd1')" data-correct-multi="b,d" data-value="b">visible</div>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qd1')" data-correct-multi="b,d" data-value="c">hostile</div>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qd1')" data-correct-multi="b,d" data-value="d">friendly</div>
+            </div>
+
+            <div class="question-container">
+                <div class="question-number">2</div>
+                <p><strong>taper / conceal / hide / obscure</strong></p>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qd2')" data-correct-multi="a" data-value="a">taper</div>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qd2')" data-correct-multi="a" data-value="b">conceal</div>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qd2')" data-correct-multi="a" data-value="c">hide</div>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qd2')" data-correct-multi="a" data-value="d">obscure</div>
+            </div>
+
+            <div class="question-container">
+                <div class="question-number">3</div>
+                <p><strong>exasperate / annoy / infuriate / protrude</strong></p>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qd3')" data-correct-multi="d" data-value="a">exasperate</div>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qd3')" data-correct-multi="d" data-value="b">annoy</div>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qd3')" data-correct-multi="d" data-value="c">infuriate</div>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qd3')" data-correct-multi="d" data-value="d">protrude</div>
+            </div>
+
+            <div class="question-container">
+                <div class="question-number">4</div>
+                <p><strong>anxious / worried / concerned / nervous</strong></p>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qd4')" data-correct-multi="" data-value="a">anxious</div>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qd4')" data-correct-multi="" data-value="b">worried</div>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qd4')" data-correct-multi="" data-value="c">concerned</div>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qd4')" data-correct-multi="" data-value="d">nervous</div>
+                <p style="margin-top: 10px; color: #666; font-style: italic;">(All are synonyms - select none)</p>
+            </div>
+
+            <div class="question-container">
+                <div class="question-number">5</div>
+                <p><strong>exultant / joyful / sluggish / methodical</strong></p>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qd5')" data-correct-multi="c,d" data-value="a">exultant</div>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qd5')" data-correct-multi="c,d" data-value="b">joyful</div>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qd5')" data-correct-multi="c,d" data-value="c">sluggish</div>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qd5')" data-correct-multi="c,d" data-value="d">methodical</div>
+            </div>
+
+            <div class="question-container">
+                <div class="question-number">6</div>
+                <p><strong>absurd / nonchalant / silly / ridiculous</strong></p>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qd6')" data-correct-multi="b" data-value="a">absurd</div>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qd6')" data-correct-multi="b" data-value="b">nonchalant</div>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qd6')" data-correct-multi="b" data-value="c">silly</div>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qd6')" data-correct-multi="b" data-value="d">ridiculous</div>
+            </div>
+
+            <div class="question-container">
+                <div class="question-number">7</div>
+                <p><strong>heroic / brave / fearless / bold</strong></p>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qd7')" data-correct-multi="" data-value="a">heroic</div>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qd7')" data-correct-multi="" data-value="b">brave</div>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qd7')" data-correct-multi="" data-value="c">fearless</div>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qd7')" data-correct-multi="" data-value="d">bold</div>
+                <p style="margin-top: 10px; color: #666; font-style: italic;">(All are synonyms - select none)</p>
+            </div>
+
+            <div class="question-container">
+                <div class="question-number">8</div>
+                <p><strong>interest / fascinate / donate / attract</strong></p>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qd8')" data-correct-multi="c" data-value="a">interest</div>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qd8')" data-correct-multi="c" data-value="b">fascinate</div>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qd8')" data-correct-multi="c" data-value="c">donate</div>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qd8')" data-correct-multi="c" data-value="d">attract</div>
+            </div>
+
+            <div class="question-container">
+                <div class="question-number">9</div>
+                <p><strong>feeble / evasive / puny / burly</strong></p>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qd9')" data-correct-multi="b,d" data-value="a">feeble</div>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qd9')" data-correct-multi="b,d" data-value="b">evasive</div>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qd9')" data-correct-multi="b,d" data-value="c">puny</div>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qd9')" data-correct-multi="b,d" data-value="d">burly</div>
+            </div>
+
+            <div class="question-container">
+                <div class="question-number">10</div>
+                <p><strong>yearn / loathe / dislike / hate</strong></p>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qd10')" data-correct-multi="a" data-value="a">yearn</div>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qd10')" data-correct-multi="a" data-value="b">loathe</div>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qd10')" data-correct-multi="a" data-value="c">dislike</div>
+                <div class="choice-option" onclick="selectMultipleChoice(this, 'qd10')" data-correct-multi="a" data-value="d">hate</div>
+            </div>
+
+            <button class="check-btn" onclick="checkSectionD()">✓ Check Section 13D</button>
+        </div>
+        <!-- Section 13E - Beware the Silent Crocodile -->
+        <div id="sectionE" class="section">
+            <h2>13E - Beware the Silent Crocodile</h2>
+            
+            <div style="background: white; padding: 30px; border-radius: 15px; margin: 25px 0; border: 2px solid #11998e;">
+                <h3 style="text-align: center; color: #11998e; margin-bottom: 20px;">Beware the Silent Crocodile</h3>
+                
+                <p style="font-size: 1.2em; line-height: 1.8; text-align: justify;">
+                    Crocodiles are the largest and most ferocious of all reptiles. They live in swampy areas, close to the banks of tropical rivers or lakes. They have been around since the age of the dinosaurs. Back then they reached lengths of thirty feet or more. The crocodile of today, however, is much smaller than its ancient ancestors. It seldom grows longer than fifteen feet from its head to the tip of its long, <strong>tapering</strong> tail.
+                </p>
+                
+                <p style="font-size: 1.2em; line-height: 1.8; text-align: justify; margin-top: 20px;">
+                    Crocodiles in the wild are almost unknown in North America. A few can be found in the remaining tidal marshes of the Everglades and the Florida Keys. There they might be mistaken for alligators, their close relatives. Crocodiles and alligators resemble each other in many ways. There are clear differences between them, however. The crocodile is the more <strong>aggressive</strong> of the two. It also has a longer and narrower <strong>snout</strong>, and the fourth tooth on each side of its jaw <strong>protrudes</strong>. That tooth remains in view even when its mouth is closed.
+                </p>
+                
+                <p style="font-size: 1.2em; line-height: 1.8; text-align: justify; margin-top: 20px;">
+                    A crocodile in the water lies almost entirely <strong>concealed</strong> below the surface; only its eyes and nostrils are <strong>visible</strong>. It can stay like this for hours, its eyes fixed on the water's edge, waiting for a thirsty animal to come to drink. When this happens, the crocodile is careful not to scare away its prey. It disappears beneath the surface, swimming slowly toward the unsuspecting animal; it makes not even the slightest <strong>ripple</strong>.
+                </p>
+                
+                <p style="font-size: 1.2em; line-height: 1.8; text-align: justify; margin-top: 20px;">
+                    If the thirsty animal is lucky, it senses the danger in time and escapes. If the crocodile is lucky, it seizes the animal in its jaws, knocks it off balance by <strong>flailing</strong> its powerful tail, and drags it into the water. There the creature drowns. The crocodile then finds a place where it can <strong>gorge</strong> on the dead animal without being disturbed. When it has eaten its fill, it will hide the remains of the <strong>carcass</strong>. Then it will return to feed on it later.
+                </p>
+                
+                <p style="font-size: 1.2em; line-height: 1.8; text-align: justify; margin-top: 20px;">
+                    When not hunting for food, the crocodile spends much of its time on land. Its belly almost touches the ground as it <strong>slithers</strong> from the water and finds a comfortable spot to <strong>bask</strong> in the sun. Like other reptiles, the crocodile is a cold-blooded animal; therefore, its temperature changes with its surroundings. To escape the extreme heat of midday, it burrows into the soft ground with its sharp claws until it has made a hole large enough to <strong>accommodate</strong> itself. In the cool of the evening, its temperature drops and its movements become <strong>sluggish</strong>.
+                </p>
+                
+                <p style="font-size: 1.2em; line-height: 1.8; text-align: justify; margin-top: 20px;">
+                    There are several different kinds of crocodile. The best known is the Nile crocodile of Africa, which has an unusual companion called the crocodile bird. This daring little creature feeds by hopping inside the crocodile's mouth and picking <strong>morsels</strong> of meat from its teeth. The crocodile shows its gratitude for having its teeth cleaned in this way by not eating the bird.
+                </p>
+            </div>
+
+            <p style="text-align: center; font-size: 1.2em; margin: 30px 0; font-weight: bold;">
+                Answer the questions by selecting the best answer!
+            </p>
+
+            <div class="question-container">
+                <div class="question-number">1</div>
+                <p><strong>Why is it unwise to get too close to a crocodile?</strong></p>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe1', 'It is aggressive and might attack')" data-value="It is the largest reptile">It is the largest reptile</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe1', 'It is aggressive and might attack')" data-value="It is aggressive and might attack">It is aggressive and might attack</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe1', 'It is aggressive and might attack')" data-value="It has sharp claws">It has sharp claws</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe1', 'It is aggressive and might attack')" data-value="It lives in swampy areas">It lives in swampy areas</div>
+            </div>
+
+            <div class="question-container">
+                <div class="question-number">2</div>
+                <p><strong>How does the shape of a crocodile's head differ from that of an alligator?</strong></p>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe2', 'The crocodile has a longer and narrower snout')" data-value="The crocodile has more teeth">The crocodile has more teeth</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe2', 'The crocodile has a longer and narrower snout')" data-value="The crocodile has a longer and narrower snout">The crocodile has a longer and narrower snout</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe2', 'The crocodile has a longer and narrower snout')" data-value="The alligator has protruding teeth">The alligator has protruding teeth</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe2', 'The crocodile has a longer and narrower snout')" data-value="The alligator is more aggressive">The alligator is more aggressive</div>
+            </div>
+
+            <div class="question-container">
+                <div class="question-number">3</div>
+                <p><strong>What do crocodiles and snakes have in common?</strong></p>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe3', 'They both slither')" data-value="They both have long tails">They both have long tails</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe3', 'They both slither')" data-value="They both slither">They both slither</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe3', 'They both slither')" data-value="They both live in swamps">They both live in swamps</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe3', 'They both slither')" data-value="They both eat meat">They both eat meat</div>
+            </div>
+
+            <div class="question-container">
+                <div class="question-number">4</div>
+                <p><strong>What is the shape of a crocodile's tail?</strong></p>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe4', 'It tapers to a point')" data-value="It is short and stubby">It is short and stubby</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe4', 'It tapers to a point')" data-value="It tapers to a point">It tapers to a point</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe4', 'It tapers to a point')" data-value="It is very muscular">It is very muscular</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe4', 'It tapers to a point')" data-value="It drags on the ground">It drags on the ground</div>
+            </div>
+
+            <div class="question-container">
+                <div class="question-number">5</div>
+                <p><strong>Why do crocodiles hide the carcasses of animals they have killed?</strong></p>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe5', 'So they can return to feed on them later')" data-value="To keep other animals away">To keep other animals away</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe5', 'So they can return to feed on them later')" data-value="So they can return to feed on them later">So they can return to feed on them later</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe5', 'So they can return to feed on them later')" data-value="To conceal evidence">To conceal evidence</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe5', 'So they can return to feed on them later')" data-value="Because they are messy eaters">Because they are messy eaters</div>
+            </div>
+
+            <div class="question-container">
+                <div class="question-number">6</div>
+                <p><strong>When are crocodiles likely to be slow in their movements?</strong></p>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe6', 'In the cool evening when temperature drops')" data-value="When they are hunting">When they are hunting</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe6', 'In the cool evening when temperature drops')" data-value="In the cool evening when temperature drops">In the cool evening when temperature drops</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe6', 'In the cool evening when temperature drops')" data-value="After they eat">After they eat</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe6', 'In the cool evening when temperature drops')" data-value="When basking in the sun">When basking in the sun</div>
+            </div>
+
+            <div class="question-container">
+                <div class="question-number">7</div>
+                <p><strong>What is the meaning of "bask" as it is used in the passage?</strong></p>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe7', 'to relax where it is pleasantly warm')" data-value="to enjoy a warm feeling">to enjoy a warm feeling</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe7', 'to relax where it is pleasantly warm')" data-value="to relax where it is pleasantly warm">to relax where it is pleasantly warm</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe7', 'to relax where it is pleasantly warm')" data-value="to lie down">to lie down</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe7', 'to relax where it is pleasantly warm')" data-value="to sleep">to sleep</div>
+            </div>
+
+            <div class="question-container">
+                <div class="question-number">8</div>
+                <p><strong>What parts of a swimming crocodile are visible?</strong></p>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe8', 'Its eyes and nostrils')" data-value="Its snout and tail">Its snout and tail</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe8', 'Its eyes and nostrils')" data-value="Its eyes and nostrils">Its eyes and nostrils</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe8', 'Its eyes and nostrils')" data-value="Its entire head">Its entire head</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe8', 'Its eyes and nostrils')" data-value="Nothing is visible">Nothing is visible</div>
+            </div>
+
+            <div class="question-container">
+                <div class="question-number">9</div>
+                <p><strong>How does a crocodile use its tail to overcome its prey?</strong></p>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe9', 'It flails its tail to knock the animal off balance')" data-value="It wraps its tail around the prey">It wraps its tail around the prey</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe9', 'It flails its tail to knock the animal off balance')" data-value="It flails its tail to knock the animal off balance">It flails its tail to knock the animal off balance</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe9', 'It flails its tail to knock the animal off balance')" data-value="It uses its tail to swim faster">It uses its tail to swim faster</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe9', 'It flails its tail to knock the animal off balance')" data-value="It stings with its tail">It stings with its tail</div>
+            </div>
+
+            <div class="question-container">
+                <div class="question-number">10</div>
+                <p><strong>What is the meaning of "accommodate" as it is used in the passage?</strong></p>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe10', 'to have or find room for')" data-value="to do a favor for">to do a favor for</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe10', 'to have or find room for')" data-value="to have or find room for">to have or find room for</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe10', 'to have or find room for')" data-value="to make comfortable">to make comfortable</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe10', 'to have or find room for')" data-value="to adjust to">to adjust to</div>
+            </div>
+
+            <div class="question-container">
+                <div class="question-number">11</div>
+                <p><strong>How does the passage suggest that a crocodile does not toy with its food?</strong></p>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe11', 'It gorges on the carcass when it has eaten its fill')" data-value="It eats quickly">It eats quickly</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe11', 'It gorges on the carcass when it has eaten its fill')" data-value="It gorges on the carcass when it has eaten its fill">It gorges on the carcass when it has eaten its fill</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe11', 'It gorges on the carcass when it has eaten its fill')" data-value="It swallows its prey whole">It swallows its prey whole</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe11', 'It gorges on the carcass when it has eaten its fill')" data-value="It kills immediately">It kills immediately</div>
+            </div>
+
+            <div class="question-container">
+                <div class="question-number">12</div>
+                <p><strong>Why is the prey of a crocodile unlikely to see it approaching in the water?</strong></p>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe12', 'The crocodile makes not even the slightest ripple')" data-value="The crocodile swims underwater">The crocodile swims underwater</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe12', 'The crocodile makes not even the slightest ripple')" data-value="The crocodile makes not even the slightest ripple">The crocodile makes not even the slightest ripple</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe12', 'The crocodile makes not even the slightest ripple')" data-value="The water is murky">The water is murky</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe12', 'The crocodile makes not even the slightest ripple')" data-value="The prey is drinking">The prey is drinking</div>
+            </div>
+
+            <div class="question-container">
+                <div class="question-number">13</div>
+                <p><strong>Why do you think the crocodile's eyes and nostrils protrude above the surface when it is in the water?</strong></p>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe13', 'So it can see and breathe while staying concealed')" data-value="To look scary">To look scary</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe13', 'So it can see and breathe while staying concealed')" data-value="So it can see and breathe while staying concealed">So it can see and breathe while staying concealed</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe13', 'So it can see and breathe while staying concealed')" data-value="To attract prey">To attract prey</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe13', 'So it can see and breathe while staying concealed')" data-value="To keep cool">To keep cool</div>
+            </div>
+
+            <div class="question-container">
+                <div class="question-number">14</div>
+                <p><strong>What do crocodile birds eat?</strong></p>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe14', 'Morsels of meat from the crocodile\\'s teeth')" data-value="Fish from the water">Fish from the water</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe14', 'Morsels of meat from the crocodile\\'s teeth')" data-value="Morsels of meat from the crocodile's teeth">Morsels of meat from the crocodile's teeth</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe14', 'Morsels of meat from the crocodile\\'s teeth')" data-value="Insects">Insects</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe14', 'Morsels of meat from the crocodile\\'s teeth')" data-value="Seeds and berries">Seeds and berries</div>
+            </div>
+
+            <div class="question-container">
+                <div class="question-number">15</div>
+                <p><strong>Why do crocodiles lie concealed in the water for long periods of time?</strong></p>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe15', 'To wait for prey to come to drink')" data-value="To sleep">To sleep</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe15', 'To wait for prey to come to drink')" data-value="To wait for prey to come to drink">To wait for prey to come to drink</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe15', 'To wait for prey to come to drink')" data-value="To stay cool">To stay cool</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe15', 'To wait for prey to come to drink')" data-value="To hide from predators">To hide from predators</div>
+            </div>
+
+            <button class="check-btn" onclick="checkSectionE()">✓ Check Section 13E</button>
+        </div>
+            </div>
+
+            <div class="question-container">
+                <div class="question-number">15</div>
+                <p><strong>Why are both Diego Rivera and Frida Kahlo honored in the world of art?</strong> <span style="color: #ee9ca7; font-weight: bold;">[Select 1]</span></p>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe15', 'They were both notable painters')" data-value="They were married to each other">They were married to each other</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe15', 'They were both notable painters')" data-value="They were both notable painters">They were both notable painters</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe15', 'They were both notable painters')" data-value="They lived in Casa Azul">They lived in Casa Azul</div>
+                <div class="choice-option" onclick="selectSingleChoice(this, 'qe15', 'They were both notable painters')" data-value="They supported the revolution">They supported the revolution</div>
+            </div>
+
+            <button class="check-btn" onclick="checkSectionE()">✓ Check Section 12E</button>
+        </div>
+            <button class="check-btn" onclick="checkSectionE()">✓ Check Section 12E</button>
+        </div>
+
+        <!-- Results Section -->
+        <div class="results-container">
+            <h2>🎯 Your Results!</h2>
+            <h3 id="finalScore" style="font-size: 2em; margin: 20px 0;">Your Score: 0/0</h3>
+            <p id="finalMessage" style="font-size: 1.5em; margin: 20px 0;"></p>
+            
+            <div class="score-grid">
+                <div class="score-card">
+                    <h3>12A - Finding Meanings</h3>
+                    <p id="scoreA">0/10</p>
+                </div>
+                <div class="score-card">
+                    <h3>12B - Just the Right Word</h3>
+                    <p id="scoreB">0/10</p>
+                </div>
+                <div class="score-card">
+                    <h3>12C - Applying Meanings</h3>
+                    <p id="scoreC">0/8</p>
+                </div>
+                <div class="score-card">
+                    <h3>12D - Word Study</h3>
+                    <p id="scoreD">0/10</p>
+                </div>
+                <div class="score-card">
+                    <h3>12E - Frida Kahlo</h3>
+                    <p id="scoreE">0/15</p>
+                </div>
+            </div>
+            
+            <button class="check-btn" onclick="restartTest()" style="background: linear-gradient(45deg, #ee9ca7, #ffdde1);">
+                🔄 Restart Test
+            </button>
+        </div>
+    </div>
+
+    <script>
+        let scores = {
+            sectionA: 0,
+            sectionB: 0,
+            sectionC: 0,
+            sectionD: 0,
+            sectionE: 0
+        };
+
+        const maxScores = {
+            sectionA: 10,
+            sectionB: 10,
+            sectionC: 8,
+            sectionD: 10,
+            sectionE: 15
+        };
+
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Update navigation buttons
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function updateProgress() {
+            const totalSections = 5;
+            const completedSections = Object.values(scores).filter(score => score > 0).length;
+            const progress = (completedSections / totalSections) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+            document.getElementById('progressText').textContent = `Progress: ${Math.round(progress)}% Complete`;
+        }
+
+        function selectChoice(element, questionId) {
+            // Remove selection from all options in this question
+            const questionContainer = element.closest('.question-container');
+            questionContainer.querySelectorAll('.choice-option').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            
+            // Select clicked option
+            element.classList.add('selected');
+        }
+
+        function selectSingleChoice(element, questionId, correctAnswer) {
+            // Remove selection from all options in this question
+            const questionContainer = element.closest('.question-container');
+            questionContainer.querySelectorAll('.choice-option').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            
+            // Select clicked option
+            element.classList.add('selected');
+            
+            // Store correct answer for later checking
+            element.dataset.correctAnswer = correctAnswer;
+        }
+
+        function selectMultipleChoice(element, questionId) {
+            element.classList.toggle('selected');
+        }
+
+        function checkSectionA() {
+            let score = 0;
+            const questions = document.querySelectorAll('#sectionA .question-container');
+            
+            questions.forEach((question) => {
+                const selectedOption = question.querySelector('.choice-option.selected');
+                if (selectedOption) {
+                    const correctAnswer = selectedOption.dataset.correct;
+                    const value = selectedOption.dataset.value;
+                    
+                    if (value === correctAnswer) {
+                        selectedOption.classList.add('correct');
+                        score++;
+                    } else {
+                        selectedOption.classList.add('incorrect');
+                        // Show the correct answer
+                        question.querySelectorAll('.choice-option').forEach(opt => {
+                            if (opt.dataset.value === opt.dataset.correct) {
+                                opt.classList.add('correct');
+                            }
+                        });
+                    }
+                }
+            });
+            
+            scores.sectionA = score;
+            alert(`Section 12A Complete! You got ${score} out of ${maxScores.sectionA} correct!`);
+            updateProgress();
+        }
+
+        function checkSectionB() {
+            let score = 0;
+            const questions = document.querySelectorAll('#sectionB .question-container');
+            
+            questions.forEach((question) => {
+                const selectedOption = question.querySelector('.choice-option.selected');
+                if (selectedOption) {
+                    const correctAnswer = selectedOption.dataset.correctAnswer;
+                    const value = selectedOption.dataset.value;
+                    
+                    if (value === correctAnswer) {
+                        selectedOption.classList.add('correct');
+                        score++;
+                    } else {
+                        selectedOption.classList.add('incorrect');
+                        // Show the correct answer
+                        question.querySelectorAll('.choice-option').forEach(opt => {
+                            if (opt.dataset.value === correctAnswer) {
+                                opt.classList.add('correct');
+                            }
+                        });
+                    }
+                }
+            });
+            
+            scores.sectionB = score;
+            alert(`Section 12B Complete! You got ${score} out of ${maxScores.sectionB} correct!`);
+            updateProgress();
+        }
+
+        function checkSectionC() {
+            let score = 0;
+            const questions = document.querySelectorAll('#sectionC .question-container');
+            
+            questions.forEach((question) => {
+                const allOptions = question.querySelectorAll('.choice-option');
+                const selectedOptions = question.querySelectorAll('.choice-option.selected');
+                
+                // Get correct answers from first option's data attribute
+                const correctAnswersStr = allOptions[0].dataset.correctMulti;
+                const correctAnswers = correctAnswersStr.split(',');
+                
+                // Mark all options
+                allOptions.forEach(opt => {
+                    const value = opt.dataset.value;
+                    const isSelected = opt.classList.contains('selected');
+                    const shouldBeSelected = correctAnswers.includes(value);
+                    
+                    if (shouldBeSelected) {
+                        opt.classList.add('correct');
+                    }
+                    if (isSelected && !shouldBeSelected) {
+                        opt.classList.add('incorrect');
+                    }
+                });
+                
+                // Check if answer is fully correct
+                if (selectedOptions.length === correctAnswers.length) {
+                    let allCorrect = true;
+                    selectedOptions.forEach(option => {
+                        if (!correctAnswers.includes(option.dataset.value)) {
+                            allCorrect = false;
+                        }
+                    });
+                    if (allCorrect) score++;
+                }
+            });
+            
+            scores.sectionC = score;
+            alert(`Section 12C Complete! You got ${score} out of ${maxScores.sectionC} correct!`);
+            updateProgress();
+        }
+
+        function checkSectionD() {
+            let score = 0;
+            const questions = document.querySelectorAll('#sectionD .question-container');
+            
+            questions.forEach((question) => {
+                const selectedOption = question.querySelector('.choice-option.selected');
+                if (selectedOption) {
+                    const correctAnswer = selectedOption.dataset.correctAnswer;
+                    const value = selectedOption.dataset.value;
+                    
+                    if (value === correctAnswer) {
+                        selectedOption.classList.add('correct');
+                        score++;
+                    } else {
+                        selectedOption.classList.add('incorrect');
+                        // Show the correct answer
+                        question.querySelectorAll('.choice-option').forEach(opt => {
+                            if (opt.dataset.value === correctAnswer) {
+                                opt.classList.add('correct');
+                            }
+                        });
+                    }
+                }
+            });
+            
+            scores.sectionD = score;
+            alert(`Section 12D Complete! You got ${score} out of ${maxScores.sectionD} correct!`);
+            updateProgress();
+        }
+
+        function checkSectionE() {
+            let score = 0;
+            const questions = document.querySelectorAll('#sectionE .question-container');
+            
+            questions.forEach((question, index) => {
+                // Question 15 is multiple choice, others are single choice
+                if (index === 14) { // Question 15 (0-indexed)
+                    const allOptions = question.querySelectorAll('.choice-option');
+                    const selectedOptions = question.querySelectorAll('.choice-option.selected');
+                    
+                    // Get correct answers from first option's data attribute
+                    const correctAnswersStr = allOptions[0].dataset.correctMulti;
+                    const correctAnswers = correctAnswersStr.split(',');
+                    
+                    // Mark all options
+                    allOptions.forEach(opt => {
+                        const value = opt.dataset.value;
+                        const isSelected = opt.classList.contains('selected');
+                        const shouldBeSelected = correctAnswers.includes(value);
+                        
+                        if (shouldBeSelected) {
+                            opt.classList.add('correct');
+                        }
+                        if (isSelected && !shouldBeSelected) {
+                            opt.classList.add('incorrect');
+                        }
+                    });
+                    
+                    // Check if answer is fully correct
+                    if (selectedOptions.length === correctAnswers.length) {
+                        let allCorrect = true;
+                        selectedOptions.forEach(option => {
+                            if (!correctAnswers.includes(option.dataset.value)) {
+                                allCorrect = false;
+                            }
+                        });
+                        if (allCorrect) score++;
+                    }
+                } else {
+                    const selectedOption = question.querySelector('.choice-option.selected');
+                    if (selectedOption) {
+                        const correctAnswer = selectedOption.dataset.correctAnswer;
+                        const value = selectedOption.dataset.value;
+                        
+                        if (value === correctAnswer) {
+                            selectedOption.classList.add('correct');
+                            score++;
+                        } else {
+                            selectedOption.classList.add('incorrect');
+                            // Show the correct answer
+                            question.querySelectorAll('.choice-option').forEach(opt => {
+                                if (opt.dataset.value === correctAnswer) {
+                                    opt.classList.add('correct');
+                                }
+                            });
+                        }
+                    }
+                }
+            });
+            
+            scores.sectionE = score;
+            alert(`Section 12E Complete! You got ${score} out of ${maxScores.sectionE} correct!`);
+            updateProgress();
+        }
+
+        function showResults() {
+            const totalScore = Object.values(scores).reduce((a, b) => a + b, 0);
+            const totalPossible = Object.values(maxScores).reduce((a, b) => a + b, 0);
+            const percentage = Math.round((totalScore / totalPossible) * 100);
+            
+            document.getElementById('finalScore').textContent = `Your Score: ${totalScore}/${totalPossible}`;
+            document.getElementById('scoreA').textContent = `${scores.sectionA}/${maxScores.sectionA}`;
+            document.getElementById('scoreB').textContent = `${scores.sectionB}/${maxScores.sectionB}`;
+            document.getElementById('scoreC').textContent = `${scores.sectionC}/${maxScores.sectionC}`;
+            document.getElementById('scoreD').textContent = `${scores.sectionD}/${maxScores.sectionD}`;
+            document.getElementById('scoreE').textContent = `${scores.sectionE}/${maxScores.sectionE}`;
+            
+            let message = '';
+            if (percentage >= 90) {
+                message = '✈️ Outstanding! You\'re ready for revolution in vocabulary! 🌟';
+            } else if (percentage >= 80) {
+                message = '🎉 Excellent work! You\'ve mastered the revolutionary vocabulary! 🎉';
+            } else if (percentage >= 70) {
+                message = '👏 Great job! You\'re flying high with these words! 👏';
+            } else if (percentage >= 60) {
+                message = '👍 Good effort! Keep practicing to soar higher! 👍';
+            } else {
+                message = '💪 Keep studying! You\'ll be taking off in no time! 💪';
+            }
+            
+            document.getElementById('finalMessage').textContent = message;
+            document.querySelector('.results-container').style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function restartTest() {
+            scores = {
+                sectionA: 0,
+                sectionB: 0,
+                sectionC: 0,
+                sectionD: 0,
+                sectionE: 0
+            };
+            
+            // Reset all selections
+            document.querySelectorAll('.choice-option').forEach(option => {
+                option.classList.remove('selected', 'correct', 'incorrect');
+            });
+            
+            document.querySelector('.results-container').style.display = 'none';
+            updateProgress();
+            showSection('intro');
+        }
+
+        // Initialize
+        updateProgress();
+    </script>
+</body>
+</html>
